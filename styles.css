@@ -291,7 +291,7 @@ button:hover{
   background: #231557;
 }
 
-@media(max-width : 768px) {
+@media(max-width : 992px) {
   .input-area{
     height: calc(100vh - 40vw - 48px);
     min-height: 100px;
@@ -391,7 +391,7 @@ button:hover{
   width: 100%;
 }
 
-@media(max-width : 768px){
+@media(max-width : 992px){
   .popup .popup-body{
     width: calc(100% - 20px);
     min-height: 100px;

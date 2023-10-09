@@ -1,0 +1,421 @@
+body{
+  background-repeat: no-repeat;
+  background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #DF004A 67%, #BBB600 100%);
+}
+
+
+.banner-img{
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+
+.footer{
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+}
+.foot-content{
+  display: block;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+}
+
+.foot-content .cl-1{
+  color: #FF671F;
+
+}
+.foot-content .cl-2{
+  color: #FFFFFF;
+
+}
+.foot-content .cl-3{
+  color: #046A38;
+
+}
+
+/*==============================
+	Timer styles start
+==============================*/
+
+.countdown-timer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 40vw - 24px);
+  min-height: 120px;
+}
+
+.flip-clock {
+  text-align: center;
+  perspective: 400px;
+  margin: 0 auto;
+  *,
+  *:before,
+  *:after { box-sizing: border-box; }
+}
+
+.flip-clock__piece {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.flip-clock__slot {
+  font-size: 15px;
+  color: #2CB0EF;
+}
+
+.card-clock {
+  display: block;
+  position: relative;
+  padding-bottom: 50px;
+  font-size: 50px;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.card__top,
+.card__bottom,
+.card__back::before,
+.card__back::after {
+  display: block;
+  height: 50px;
+  color: #FF1361;
+  background: #44107A;
+  padding:  25px 0;
+  border-radius:  15px  15px 0 0;
+  backface-visiblity: hidden;
+  transform-style: preserve-3d;
+  width: 110px;
+  transform: translateZ(0);
+  overflow: hidden;
+  pointer-events: none;
+
+}
+
+.card__bottom {
+  color: #DF004A;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: solid 1px #000;
+  background: #231557;
+  border-radius: 0 0 15px  15px;
+  pointer-events: none;
+  overflow: hidden;
+
+}
+
+.card__bottom::after {
+  display: block;
+  margin-top: -50px;
+}
+
+.card__back::before,
+.card__bottom::after {
+  content: attr(data-value);
+}
+
+.card__back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+}
+
+.card__back::before {
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+
+
+.flip .card__back::before {
+  animation: flipTop 0.3s cubic-bezier(.37,.01,.94,.35);
+  animation-fill-mode: both;
+  transform-origin: center bottom;
+}
+
+.flip .card__back .card__bottom {
+  transform-origin: center top;
+  animation-fill-mode: both;
+  animation: flipBottom 0.6s cubic-bezier(.15,.45,.28,1);// 0.3s;
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%, 99% {
+    opacity: 0.99;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBottom {
+  0%, 50% {
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+
+@media(max-width : 768px) {
+  .countdown-timer{
+    height: calc(100vh - 40vw - 48px);
+    min-height: 100px;
+  }
+
+  .card-clock {
+    padding-bottom: 40px;
+    font-size: 40px;
+  }
+  .card__top,
+  .card__bottom,
+  .card__back::before,
+  .card__back::after {
+    height: 40px;
+    padding:  20px 0;
+    border-radius:  10px  10px 0 0;
+    width: 70px;
+  }
+  .card__bottom::after {
+    margin-top: -40px;
+  }
+  .card__bottom {
+    border-radius: 0 0 10px  10px;
+  }
+}
+
+/*==============================
+	Timer styles end
+==============================*/
+
+
+
+
+
+
+/*==============================
+	css for user.html
+==============================*/
+
+
+.input-area{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 40vw - 24px);
+  min-height: 120px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.input-area-body{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+}
+.input-area-body::after{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(223, 0, 74, .5);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+input{
+  display: block;
+  position: relative;
+  background: transparent;
+  border: groove 2px #888;
+  color: #fff;
+  height: 50px;
+  padding: 0 10px;
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+  font-size: 20px;
+  box-shadow: inset 0 0 10px #000;
+
+}
+input::placeholder{
+  color: #888;
+}
+input:hover{
+  border-color: #aaa;
+}
+button{
+  display: block;
+  position: relative;
+  background: #888;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 0 8px 8px 0;
+  border: groove 2px #888;
+  border-left-width: 0;
+  font-size: 20px;
+  transition: all .4s;
+
+}
+button:hover{
+  background: #231557;
+}
+
+@media(max-width : 768px) {
+  .input-area{
+    height: calc(100vh - 40vw - 48px);
+    min-height: 100px;
+    width: 100%;
+  }
+  input{
+    border-width: 1px;
+    height: 40px;
+    padding: 0 6px;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+    box-shadow: inset 0 0 5px #000;
+  }
+  button{
+    height: 40px;
+    border-radius: 0 6px 6px 0;
+    border-width: 1px;
+    font-size: 16px;
+  }
+}
+
+
+.popup{
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 5;
+}
+.popup::after{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .8);
+  filter: blur(20px);
+  top:0;
+  z-index: -1;
+}
+.popup .popup-body{
+  position: relative;
+  display: block;
+  width: 60%;
+  min-height: 200px;
+  margin: 50px auto 0;
+  background: #DF004A;
+  border: solid 2px #DF004A;
+  border-radius: 10px 10px 0 0;
+}
+
+.popup .popup-body .popup-head{
+  display: block;
+  position: relative;
+  padding: 10px 0;
+  border-bottom:solid 1px #231557;
+}
+.popup .popup-body .popup-head button{
+  display: block;
+  position: relative;
+  background: #231557;
+  color: #fff;
+  width: auto;
+  height:auto;
+  border-radius: 8px;
+  border: solid 1px #888;
+  border-left-width: 0;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 5px 20px;
+}
+.popup .popup-body .popup-head button:hover{
+  color: #231557;
+  background: #fff;
+  border-color: #231557;
+}
+.popup .popup-body .popup-head span{
+  position: absolute;
+  display: block;
+  right:10px;
+  top: 13px;
+  cursor: pointer;
+}
+.popup .popup-body .popup-head span svg{
+  width: 30px;
+  height: auto;
+  fill:#231557;
+}
+.popup .popup-body .popup-head span:hover svg{
+  fill: #fff;
+}
+
+.popup .popup-body img{
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+@media(max-width : 768px){
+  .popup .popup-body{
+    width: calc(100% - 20px);
+    min-height: 100px;
+  }
+  .popup .popup-body .popup-head{
+    padding: 5px 0;
+  }
+
+  .popup .popup-body .popup-head span{
+    right: 6px;
+    top: 10px;
+  }
+  .popup .popup-body .popup-head span svg{
+    width: 25px;
+  }
+}
+
+
+
+#confetti{
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: -1;
+}
